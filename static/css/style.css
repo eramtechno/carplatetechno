@@ -1,0 +1,104 @@
+[type=file], button {
+  height: 0;
+  overflow: hidden;
+  width: 0;
+}
+
+[type=file] + label, button + label {
+  background: #f15d22;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Rubik", sans-serif;
+  font-size: inherit;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  outline: none;
+  padding: 1rem 50px;
+  position: relative;
+  transition: all 0.3s;
+  vertical-align: middle;
+}
+[type=file] + label:hover, button:hover {
+  background-color: #d3460d;
+}
+
+[type=file] + label.btn-1 {
+  background-color: #f79159;
+  box-shadow: 0 6px #f57128;
+  transition: none;
+}
+
+[type=file] + label.btn-1:hover{
+  box-shadow: 0 4px #f57128;
+  top: 2px;
+}
+
+button + label.btn-2 {
+  background-color: #99c793;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+button + label.btn-2::before {
+  color: #fff;
+  content: "🚗";
+  font-family: "Font Awesome 5 Pro";
+  font-size: 100%;
+  height: 100%;
+  right: 130%;
+  line-height: 3.3;
+  position: absolute;
+  top: 0px;
+  transition: all 0.3s;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+button + label.btn-2:hover {
+  background-color: #497f42;
+}
+
+button + label.btn-2:hover::before {
+  right: 75%;
+}
+
+body {
+  font-family: "Literata", serif;
+  font-size: 18px;
+  line-height: 1.3;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.wrapper {
+  background-color: #fff;
+  border-radius: 1rem;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 2rem;
+  width: 100%;
+}
+
+.footer {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  margin-top: 3rem;
+}
+
+h1,
+p {
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.7rem;
+}
+
+a {
+  color: #31c1ef;
+  text-decoration: none;
+}

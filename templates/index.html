@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="icon" type="image/png" href="{% static 'images/icon/car_new.png' %}">
+        <title>Blur Plate</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://unpkg.com/hyperscript.org@0.0.3"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>Blur Car Number Plate</h1>
+            <p>Love your car ? But hate your number plate ? Don't worry! We got you covered! <code>Blur your number plate with us.</code> </p>
+
+            <form  enctype="multipart/form-data" method="POST">
+                {% csrf_token %}
+                <input type="file" id="file" name="image" required/>
+                <label for="file" id="fileLabel" class="btn-1">upload file</label>
+
+                <button type="submit" id="button" ></button>
+                <label for="button" class="btn-2">
+                    <span>submit</span>
+                </label>
+            </form>
+            {% if success %}
+            <p class="display:flex; justify-content:center;">
+                <img width="460" height="300" src="{% static 'images/car.jpg' %}">
+            </p>
+            {% endif %}
+            <p class="footer">by <a href="https://github.com/ArbaazAli">Arbaaz</a>, <a href="https://github.com/amogh9594">Amogh</a> and
+                <a href="https://github.com/mrpascal1">Shahid</a> at <a href="https://benmarshall.me/styling-file-inputs/" target="_blank"><em>technokraft &mdash; The Best Way.</em></a></p>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $('input[type="file"]').change(function(e){
+                    let fileName = e.target.files[0].name;
+                    $('#fileLabel').text(fileName);
+                });
+            });
+        </script>
+    </body>
+</html>
